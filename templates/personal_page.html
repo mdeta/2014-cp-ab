@@ -1,0 +1,48 @@
+<%inherit file="base.html" />
+<%block name="content">
+<%include file="nav.html"/>
+<div class="content">
+<div class="row">
+  <div class="one-half column">
+    <div class="headline">
+      About Me
+    </div>
+    <div class="photo">
+      <img src="${photo_url}" alt="photo">
+    </div>
+    <div class="meta">
+      <ul>
+        <li>Name: ${std_name}</li>
+        <li>ID NO. : ${ID}</li>
+        <li>Class: ${classes}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="one-half column">
+    <div class="headline">
+      Self Evaluation
+    </div>
+
+    <div>
+      <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+        % for name, score in self_evaluations:
+          <tr>
+            <td>${name}</td>
+            <td>${score}</td>
+          </tr>
+        % endfor
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+</div>
+</%block>

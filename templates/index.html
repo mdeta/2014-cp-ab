@@ -1,0 +1,10 @@
+<%inherit file="base.html" />
+<%block name="content">
+    <div class="headline center"><span>Students</span></div>
+    <div class="row wall">
+      % for student, status in students:
+        <div class="one-third column std ${status}"><a href="${student}">${student}</a></div>
+      % endfor
+    </div>
+</%block>
+
