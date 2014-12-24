@@ -12,14 +12,25 @@ class Application(object):
     #@+others
     #@+node:lee.20141223114246.42: *3* def init
     def __init__(self):
+    	#你的名子
         self.name = 'Just Example'
+        # 你的學號
         self.number = '40323199'
+        # 你的班級
         self.classes = 'nfu'
+        # 你的 github repository url
         self.github_repo_url = 'https://github.com/mdeta/2014-cp-ab'
+        # 你的 openshift app
         self.openshift_url = 'http://cp-nfumde.rhcloud.com/'
+        # 你的自評
         self.evaluation = [('Project 7', 80), ('Project 8', 90), ('Project 9', 100)]
+        # 你的照片 url
         self.photo_url = 'http://placekitten.com/g/350/300'
-        
+        # 這裡是心得
+        self.my_remark = """
+        Computer Programming is good course
+        """
+
     #@+node:lee.20141223114246.43: *3* def use_template
     def use_template(self, content):
         above = """
@@ -102,11 +113,11 @@ class Application(object):
                     <label for="toggle" class="toggle" data-open="Main Menu" data-close="Close Menu" onclick></label>
                     <ul class="menu">
         """
-        
+
         content = ''
         for link, name in anchors:
             content += '<li><a href="' + link + '">' + name + '</a></li>'
-        
+
         below_side = """
                     </ul>
                 </div>
@@ -151,13 +162,13 @@ class Application(object):
     def generate_personal_page(self, data=None):
         if data is None:
             return ''
-        
+
         # check data have all we need, if the key not exist, use empty string
         must_have_key = ('photo_url', 'name', 'ID', 'class', 'evaluation')
         for key in must_have_key:
             data[key] = data.get(key, '')
-                
-                 
+
+
         if 'evaluation' in data:
             table_content = ''
             for projectName, score in data['evaluation']:
@@ -212,11 +223,8 @@ class Application(object):
     @cherrypy.expose
     def remark(self):
         # 這裡是心得
-        content = """
-        computer prgramming is good course
-        """
         # generate_headline_page(你的標題, 你的內容)
-        return self.generate_headline_page("REMARK", content)
+        return self.generate_headline_page("REMARK", self.my_remark)
     #@+node:lee.20141223114246.48: *3* def index
     @cherrypy.expose
     def index(self):
@@ -232,3 +240,4 @@ class Application(object):
     #@-others
 #@-others
 #@-leo
+
