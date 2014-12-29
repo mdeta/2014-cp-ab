@@ -33,7 +33,8 @@
 </v>
 <v t="lee.20141224110313.55" a="E"><vh>@path std</vh>
 <v t="lee.20141224110313.58"><vh>@file asciisymbol.py</vh></v>
-<v t="lee.20141224110313.59"><vh>@file example1.py</vh></v>
+<v t="lee.20141224110313.59" a="E"
+expanded="lee.20141221203113.47,"><vh>@file example1.py</vh></v>
 <v t="lee.20141224110313.60" a="E"
 expanded="lee.20141215164031.96,"><vh>@file example.py</vh></v>
 <v t="lee.20141224110313.61" a="E"

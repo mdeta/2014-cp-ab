@@ -19,11 +19,11 @@ class Application(object):
         # 你的班級
         self.classes = 'nfu'
         # 你的 github repository url
-        self.github_repo_url = 'https://github.com/mdeta/2014-cp-ab'
+        self.github_repo_url = 'https://github.com/mdeta/2014-cp-personal'
         # 你的 bitbucket repository url
         self.bitbucket_repo_url = ''
         # 你的 openshift app
-        self.openshift_url = 'http://cp-nfumde.rhcloud.com/'
+        self.openshift_url = 'http://personal-nfumde.rhcloud.com/'
         # 你的自評
         self.evaluation = [('Project 7', 80), ('Project 8', 90), ('Project 9', 100)]
         # 你的照片 url
