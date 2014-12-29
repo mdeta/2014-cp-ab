@@ -138,7 +138,7 @@ elif os.name == 'posix':
     # in ubuntu
     #p = subprocess.Popen('/usr/bin/python3 wsgi.py', shell=True)
     # todo 需要開啟另外一個 command 去執行
-    pass
+    p = subprocess.Popen('gnome-terminal -e "python3 wsgi.py"',shell=True)
 try:
     p.wait()
     print ('done')
