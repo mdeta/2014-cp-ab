@@ -31,12 +31,12 @@
 <v t="lee.20141224110313.46" a="E"><vh>@file wsgi.py</vh></v>
 <v t="lee.20141224110313.47"><vh>@edit readme.md</vh></v>
 </v>
-<v t="lee.20141224110313.55"><vh>@path std</vh>
+<v t="lee.20141224110313.55" a="E"><vh>@path std</vh>
 <v t="lee.20141224110313.58"><vh>@file asciisymbol.py</vh></v>
 <v t="lee.20141224110313.59"><vh>@file example1.py</vh></v>
-<v t="lee.20141224110313.60"
+<v t="lee.20141224110313.60" a="E"
 expanded="lee.20141215164031.96,"><vh>@file example.py</vh></v>
-<v t="lee.20141224110313.61"
+<v t="lee.20141224110313.61" a="E"
 expanded="lee.20141223114246.41,"><vh>@file example2.py</vh></v>
 </v>
 <v t="lee.20141224110313.56"><vh>@path templates</vh>
@@ -132,7 +132,7 @@ import os
 
 if os.name == 'nt':
     # in windows
-    p = subprocess.Popen('start cmd /c v:\ide\python34\python wsgi.py', shell=True)
+    p = subprocess.Popen('start cmd /c v:\ide\python33\python.exe wsgi.py', shell=True)
 elif os.name == 'posix':
     # in ubuntu
     #p = subprocess.Popen('/usr/bin/python3 wsgi.py', shell=True)

@@ -1,5 +1,5 @@
 #@+leo-ver=5-thin
-#@+node:lee.20141223114246.40: * @file example2.py
+#@+node:lee.20141224110313.61: * @file example2.py
 #@@language python
 #@@tabwidth -4
 import cherrypy
@@ -20,6 +20,8 @@ class Application(object):
         self.classes = 'nfu'
         # 你的 github repository url
         self.github_repo_url = 'https://github.com/mdeta/2014-cp-ab'
+        # 你的 bitbucket repository url
+        self.github_repo_url = ''
         # 你的 openshift app
         self.openshift_url = 'http://cp-nfumde.rhcloud.com/'
         # 你的自評
@@ -217,7 +219,7 @@ class Application(object):
         return self.use_template(content)
     #@+node:lee.20141223114246.47: *3* def link
     def link(self):
-        aviable_link = [("index", "HOME"), ("remark", "心得"), (self.openshift_url, "openshift app"),(self.github_repo_url, "github repo"),]
+        aviable_link = [("index", "HOME"), ("remark", "心得"), (self.openshift_url, "個人 openshift app"),(self.github_repo_url, "個人 github repo"), (self.github_repo_url, "個人 bitbucket repo"), ('/', 'back to list')]
         return aviable_link
     #@+node:lee.20141223114246.54: *3* def remark
     @cherrypy.expose
@@ -240,4 +242,3 @@ class Application(object):
     #@-others
 #@-others
 #@-leo
-
