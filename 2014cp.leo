@@ -14,7 +14,7 @@
 <v t="lee.20141227235536.46"><vh>關於此專案</vh></v>
 <v t="lee.20141227235536.47"><vh>關於個人</vh></v>
 </v>
-<v t="lee.20141227235536.48" a="E"><vh>Develop Note</vh>
+<v t="lee.20141227235536.48"><vh>Develop Note</vh>
 <v t="lee.20141227235536.51"><vh>參考</vh></v>
 <v t="lee.20141227235536.50"><vh>專案網址</vh></v>
 <v t="lee.20141227235536.49"><vh>將 python source code encoding to utf-8</vh></v>
@@ -23,7 +23,7 @@
 <v t="lee.20141227235536.52" a="E"><vh>Buttons</vh>
 <v t="lee.20141227235536.53"><vh>@button run env</vh></v>
 </v>
-<v t="lee.20141224110313.41" a="E"><vh>@path ./</vh>
+<v t="lee.20141224110313.41"><vh>@path ./</vh>
 <v t="lee.20141224110313.42"><vh>@edit requirements.txt</vh></v>
 <v t="lee.20141224110313.43"><vh>@edit __init__.py</vh></v>
 <v t="lee.20141224110313.44"><vh>@edit .gitignore</vh></v>
@@ -31,13 +31,13 @@
 <v t="lee.20141224110313.46" a="E"><vh>@file wsgi.py</vh></v>
 <v t="lee.20141224110313.47"><vh>@edit readme.md</vh></v>
 </v>
-<v t="lee.20141224110313.55" a="E"><vh>@path std</vh>
+<v t="lee.20141224110313.55"><vh>@path std</vh>
 <v t="lee.20141224110313.58"><vh>@file asciisymbol.py</vh></v>
-<v t="lee.20141224110313.59" a="E"
+<v t="lee.20141224110313.59"
 expanded="lee.20141221203113.47,"><vh>@file example1.py</vh></v>
-<v t="lee.20141224110313.60" a="E"
+<v t="lee.20141224110313.60"
 expanded="lee.20141215164031.96,"><vh>@file example.py</vh></v>
-<v t="lee.20141224110313.61" a="E"
+<v t="lee.20141224110313.61"
 expanded="lee.20141223114246.41,"><vh>@file example2.py</vh></v>
 </v>
 <v t="lee.20141224110313.56"><vh>@path templates</vh>
@@ -97,6 +97,21 @@ about application
 
     1. application 採用 python33
     2. framework 採用 cherrypy(微型框架)
+
+關於框架解釋(refer http://docs.python-guide.org/en/latest/scenarios/web/#frameworks)
+
+    Frameworks
+    
+    Broadly speaking, a web framework consists of a set of libraries and a main handler within which you can build custom code to implement a web application (i.e. an interactive web site). Most web frameworks include patterns and utilities to accomplish at least the following:
+    
+    URL Routing
+        Matches an incoming HTTP request to a particular piece of Python code to be invoked
+    Request and Response Objects
+        Encapsulate the information received from or sent to a user's browser
+    Template Engine
+        Allows for separating Python code implementing an application's logic from the HTML (or other) output that it produces
+    Development Web Server
+        Runs an HTTP server on development machines to enable rapid development; often automatically reloads server-side code when files are updated 
     
 application 內必須建立
 
@@ -138,7 +153,7 @@ elif os.name == 'posix':
     # in ubuntu
     #p = subprocess.Popen('/usr/bin/python3 wsgi.py', shell=True)
     # todo 需要開啟另外一個 command 去執行
-    p = subprocess.Popen('gnome-terminal -e "python3 wsgi.py"',shell=True)
+    p = subprocess.Popen('gnome-terminal -e "python3 wsgi.py" --disable-factory',shell=True)
 try:
     p.wait()
     print ('done')
