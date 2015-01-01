@@ -23,7 +23,7 @@
 <v t="lee.20141227235536.52" a="E"><vh>Buttons</vh>
 <v t="lee.20141227235536.53"><vh>@button run env</vh></v>
 </v>
-<v t="lee.20141224110313.41"><vh>@path ./</vh>
+<v t="lee.20141224110313.41" a="E"><vh>@path ./</vh>
 <v t="lee.20141224110313.42"><vh>@edit requirements.txt</vh></v>
 <v t="lee.20141224110313.43"><vh>@edit __init__.py</vh></v>
 <v t="lee.20141224110313.44"><vh>@edit .gitignore</vh></v>
@@ -145,6 +145,10 @@ import os
 
 # 確認運行OS
 # 用不同的方式去運行
+# 請使用 ctrl-c 去終止程序
+
+# process
+p = None
 
 if os.name == 'nt':
     # in windows
@@ -152,13 +156,15 @@ if os.name == 'nt':
 elif os.name == 'posix':
     # in ubuntu
     #p = subprocess.Popen('/usr/bin/python3 wsgi.py', shell=True)
-    # todo 需要開啟另外一個 command 去執行
-    p = subprocess.Popen('gnome-terminal -e "python3 wsgi.py" --disable-factory',shell=True)
-try:
+    # 需要開啟另外一個 command 去執行 in bg
+    # now set the process doing in backgroud
+    # use
+    p = subprocess.Popen('gnome-terminal --disable-factory -e "python3 wsgi.py" &amp;',shell=True)
+if p:
     p.wait()
     print ('done')
-except:
-    pass
+else:
+    print('this process only work in windows or ubuntu currently')
 </t>
 <t tx="lee.20141227235536.54">[How do I check if I'm running on Windows in Python? [duplicate]](https://stackoverflow.com/questions/1325581/how-do-i-check-if-im-running-on-windows-in-python)
 
